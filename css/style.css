@@ -1528,18 +1528,27 @@ p:last-child { margin-bottom: 0; }
   .site-header.is-solid .nav-toggle span { background: var(--pine); }
   .nav-toggle { position: relative; z-index: 1100; }
   .nav-toggle.is-open span { background: #fff !important; }
+   /* Backdrop dims the page BEHIND the menu — must stay below .site-header (z-index: 1000) */
   .nav-overlay {
     position: fixed;
     inset: 0;
+    z-index: 950;                      /* was 1050 — it sat above the menu and blurred it */
     background: rgba(6, 20, 16, .55);
+    -webkit-backdrop-filter: blur(3px);
     backdrop-filter: blur(3px);
     opacity: 0;
     visibility: hidden;
+    pointer-events: none;
     transition: opacity .35s, visibility .35s;
-    z-index: 1050;
   }
-  .nav-overlay.is-open { opacity: 1; visibility: visible; }
-}
+  .nav-overlay.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  /* Safety: while the menu is open, force header + menu panel above everything */
+  .site-header:has(.nav.is-open) { z-index: 1060; }
 
 @media (max-width: 640px) {
   body { font-size: 16px; }
