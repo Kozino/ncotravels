@@ -29,8 +29,8 @@
   --radius-sm: 12px;
   --nav-h:     78px;
 
-  --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
-  --font-body: 'Inter', 'Segoe UI', system-ui, -apple-system, Arial, sans-serif;
+  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-body: 'Source Sans 3', 'Segoe UI', system-ui, -apple-system, Arial, sans-serif;
 
   --grad-pine: linear-gradient(135deg, #0A1F3D 0%, #16386B 45%, #1E4E8C 100%);
   --grad-gold: linear-gradient(135deg, #FBD08A 0%, #F0A431 55%, #D98A17 100%);
@@ -139,11 +139,11 @@ p:last-child { margin-bottom: 0; }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  padding: 15px 30px;
+  gap: 8px;
+  padding: 11px 22px;
   border-radius: 999px;
   font-family: var(--font-body);
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
   letter-spacing: .02em;
   border: 1.5px solid transparent;
@@ -151,7 +151,7 @@ p:last-child { margin-bottom: 0; }
   transition: transform .25s ease, box-shadow .25s ease, background .25s ease, color .25s ease, border-color .25s ease;
   white-space: nowrap;
 }
-.btn svg { width: 17px; height: 17px; flex: none; }
+.btn svg { width: 16px; height: 16px; flex: none; }
 .btn:hover { transform: translateY(-2px); }
 .btn:active { transform: translateY(0); }
 
@@ -171,7 +171,7 @@ p:last-child { margin-bottom: 0; }
 .btn--outline { border-color: var(--pine); color: var(--pine); background: transparent; }
 .btn--outline:hover { background: var(--pine); color: #fff; }
 
-.btn--lg { padding: 17px 36px; font-size: 16px; }
+.btn--lg { padding: 13px 26px; font-size: 14.5px; }
 .btn--block { width: 100%; }
 
 .link-arrow {
@@ -279,7 +279,7 @@ p:last-child { margin-bottom: 0; }
 .nav-link.is-active { color: var(--gold); }
 .site-header.is-solid .nav-link.is-active { color: var(--gold-deep); }
 
-.nav-cta { margin-left: 14px; padding: 12px 24px; font-size: 14px; }
+.nav-cta { margin-left: 10px; padding: 9px 18px; font-size: 13px; }
 
 /* Hamburger */
 .nav-toggle {
@@ -510,6 +510,7 @@ p:last-child { margin-bottom: 0; }
 }
 .marquee__group span {
   font-family: var(--font-display);
+  font-weight: 500;
   font-size: 17px;
   font-style: italic;
   letter-spacing: .06em;
@@ -749,6 +750,7 @@ p:last-child { margin-bottom: 0; }
   position: absolute;
   top: 22px; right: 26px;
   font-family: var(--font-display);
+  font-weight: 500;
   font-size: 44px;
   font-style: italic;
   color: rgba(22, 56, 107, .08);
@@ -858,6 +860,7 @@ p:last-child { margin-bottom: 0; }
 .quote:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
 .quote__mark {
   font-family: var(--font-display);
+  font-weight: 600;
   font-size: 72px;
   line-height: .6;
   color: var(--gold);
@@ -1064,6 +1067,7 @@ p:last-child { margin-bottom: 0; }
 .svc-row__aside { position: relative; }
 .svc-num {
   font-family: var(--font-display);
+  font-weight: 500;
   font-size: clamp(90px, 10vw, 130px);
   font-style: italic;
   line-height: 1;
@@ -1503,12 +1507,12 @@ p:last-child { margin-bottom: 0; }
     position: fixed;
     top: 0; right: 0;
     height: 100dvh;
-    width: min(340px, 86vw);
+    width: min(304px, 84vw);
     flex-direction: column;
     align-items: stretch;
     gap: 4px;
     background: linear-gradient(170deg, #0A1F3D, #16386B 60%, #1E4E8C);
-    padding: 100px 30px 40px;
+    padding: 88px 24px 36px;
     transform: translateX(105%);
     transition: transform .4s cubic-bezier(.7, 0, .3, 1);
     box-shadow: -30px 0 60px -30px rgba(0, 0, 0, .5);
@@ -1517,22 +1521,22 @@ p:last-child { margin-bottom: 0; }
   .nav.is-open { transform: none; }
   .nav-link {
     color: #fff !important;
-    font-size: 17px;
-    padding: 15px 14px;
+    font-size: 14.5px;
+    padding: 11px 10px;
     border-bottom: 1px solid rgba(255, 255, 255, .09);
     border-radius: 0;
   }
   .nav-link::after { display: none; }
   .nav-link.is-active { color: var(--gold-2) !important; }
-  .nav .btn { margin-top: 22px; width: 100%; }
+  .nav .btn { margin-top: 16px; width: 100%; padding: 11px 18px; font-size: 13.5px; }
   .site-header.is-solid .nav-toggle span { background: var(--pine); }
   .nav-toggle { position: relative; z-index: 1100; }
   .nav-toggle.is-open span { background: #fff !important; }
-   /* Backdrop dims the page BEHIND the menu — must stay below .site-header (z-index: 1000) */
+  /* Backdrop dims the page BEHIND the menu — must stay below .site-header (z-index: 1000) */
   .nav-overlay {
     position: fixed;
     inset: 0;
-    z-index: 950;                      /* was 1050 — it sat above the menu and blurred it */
+    z-index: 950;
     background: rgba(6, 20, 16, .55);
     -webkit-backdrop-filter: blur(3px);
     backdrop-filter: blur(3px);
@@ -1549,7 +1553,7 @@ p:last-child { margin-bottom: 0; }
 
   /* Safety: while the menu is open, force header + menu panel above everything */
   .site-header:has(.nav.is-open) { z-index: 1060; }
-} /* ← CRITICAL: closes @media (max-width: 940px) — this was missing */
+} /* closes @media (max-width: 940px) */
 
 @media (max-width: 640px) {
   body { font-size: 16px; }
