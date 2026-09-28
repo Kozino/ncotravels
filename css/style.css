@@ -1549,6 +1549,7 @@ p:last-child { margin-bottom: 0; }
 
   /* Safety: while the menu is open, force header + menu panel above everything */
   .site-header:has(.nav.is-open) { z-index: 1060; }
+} /* ← CRITICAL: closes @media (max-width: 940px) — this was missing */
 
 @media (max-width: 640px) {
   body { font-size: 16px; }
